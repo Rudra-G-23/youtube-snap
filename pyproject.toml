@@ -1,0 +1,10 @@
+[project]
+name = "youtube-snap"
+version = "0.1.0"
+description = "A tool that create PDF from YouTube Videos."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.13.4",
+    "yt-dlp>=2026.7.4",
+]
