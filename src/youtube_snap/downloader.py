@@ -1,3 +1,5 @@
+import os
+
 import yt_dlp
 
 
@@ -9,6 +11,8 @@ class YTDownloader:
     @classmethod
     def get_yt_source(cls, *, YT_URL: str, VIDEO_NAME: str = "video") -> str:
         """Take YT url and download the video only, store in output/videos and return the video path."""
+        os.makedirs(cls._FOLDER_PATH, exist_ok=True)
+
         ydl_opts = {
             # Video Only
             "format": "bv*[ext=mp4]/bv",

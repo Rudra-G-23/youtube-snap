@@ -3,6 +3,9 @@
         "bestvideo",
         "imwrite",
         "outtmpl",
-        "setuptools"
+        "setuptools",
+        "Rudra",
+        "Prasad",
+        "Bhuyan",
     ],
 }

@@ -1,10 +1,12 @@
+import os
+
 import cv2
 
 from youtube_snap.utils import TimeConverter
 
 
 class VideoToFrame:
-    _FRAME_PATH: str = "outputs/frames/"
+    _FRAME_PATH: str = "outputs/frames"
 
     def _get_video(self, video_path) -> cv2.VideoCapture:
         """Get the video from the video path."""
@@ -70,6 +72,9 @@ class VideoToFrame:
 
         _photo_count = 1
 
+        # Ensure the output directory exists
+        os.makedirs(VideoToFrame._FRAME_PATH, exist_ok=True)
+
         while start_msec <= end_msec:
             # Start from starting time stamp given by user
             cap.set(cv2.CAP_PROP_POS_MSEC, start_msec)
@@ -96,6 +101,7 @@ class VideoToFrame:
 
 if __name__ == "__main__":
     video_path = r"/home/rudra/projects/youtube-snap/outputs/videos/langchain-job-drafting-loop-video.mp4"
-    VideoToFrame.get_frames(
-        "/home/rudra/projects/youtube-snap/outputs/videos/langchain-job-drafting-loop-video.mp4"
-    )
+
+    # Instantiate the class first because get_frames is an instance method
+    extractor = VideoToFrame()
+    extractor.get_frames(video_path, interval_in_sec=30)

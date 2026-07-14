@@ -19,3 +19,7 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+authors = [
+    {name = "Rudra Prasad Bhuyan"}
+]
