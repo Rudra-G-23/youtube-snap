@@ -1,10 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "youtube-snap"
 version = "0.1.0"
-description = "A tool that create PDF from YouTube Videos."
+description = "A tool that creates PDFs from YouTube videos."
 readme = "README.md"
 requires-python = ">=3.13"
+
 dependencies = [
     "opencv-python>=5.0.0.93",
     "yt-dlp>=2026.7.4",
 ]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
