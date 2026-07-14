@@ -14,15 +14,27 @@ class YTDownloader:
         os.makedirs(cls._FOLDER_PATH, exist_ok=True)
 
         ydl_opts = {
+            # 1. REMOVE 'cookiesfrombrowser' entirely to stop the database search error
+            # 2. ADD 'cookiefile' pointing to a static text file exported from your browser
+            "cookiefile": "cookies.txt",
+            # Keeps client spoofing active to handle the initial 403 Forbidden error
+            "extractor_args": {
+                "youtube": {
+                    "player_client": ["android", "web"],
+                }
+            },
             # Video Only
             "format": "bv*[ext=mp4]/bv",
             "outtmpl": f"{cls._FOLDER_PATH}/{VIDEO_NAME}.%(ext)s",
         }
 
+        print("\n\n\n YT Video Download started ")
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(url=YT_URL, download=True)
             file_path = ydl.prepare_filename(info_dict=info_dict)
             return file_path
+
+        print("\n\n\nVideo Downloaded successfully!")
 
 
 if __name__ == "__main__":

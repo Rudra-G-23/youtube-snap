@@ -13,7 +13,7 @@ class VideoToFrame:
         cap = cv2.VideoCapture(video_path)
 
         if not cap.isOpened():
-            raise FileNotFoundError("Could not open the video file.")
+            raise FileNotFoundError("Could not open the video file.", video_path)
 
         return cap
 

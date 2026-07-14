@@ -37,6 +37,7 @@ class PDFGenerator:
 
     def get_pdf(
         self,
+        pdf_name: str = "video_note",
     ) -> None:
         """Compile the sorted frames into a single PDF."""
         sorted_files = self._get_image_files()
@@ -53,9 +54,10 @@ class PDFGenerator:
         output_path = Path(PDFGenerator._OUTPUT_FOLDER_PATH_NAME)
         output_path.mkdir(parents=True, exist_ok=True)
 
-        output_pdf_path = output_path / "video_note.pdf"
+        output_pdf_path = output_path / f"{pdf_name}.pdf"
 
         first_img.save(output_pdf_path, save_all=True, append_images=frame_list)
+        print(f"\nPDF saved successfully! \nFile Path:{output_pdf_path}")
 
 
 if __name__ == "__main__":
