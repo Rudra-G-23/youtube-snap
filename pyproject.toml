@@ -7,10 +7,15 @@ name = "youtube-snap"
 version = "0.1.0"
 description = "A tool that creates PDFs from YouTube videos."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12,<3.13"
+
+authors = [
+    { name = "Rudra Prasad Bhuyan" }
+]
 
 dependencies = [
-    "opencv-python>=5.0.0.93",
+    "opencv-python>=4.10.0.84",
+    "pillow>=12.3.0",
     "yt-dlp>=2026.7.4",
 ]
 
@@ -19,7 +24,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-authors = [
-    {name = "Rudra Prasad Bhuyan"}
-]
