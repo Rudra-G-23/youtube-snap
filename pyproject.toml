@@ -15,6 +15,7 @@ authors = [
 
 dependencies = [
     "opencv-python>=4.10.0.84",
+    "pathlib>=1.0.1",
     "pillow>=12.3.0",
     "yt-dlp>=2026.7.4",
 ]

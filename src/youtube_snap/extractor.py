@@ -86,7 +86,7 @@ class VideoToFrame:
                 break
 
             # Save the frame
-            file_name = f"{VideoToFrame._FRAME_PATH}/frame{_photo_count}.png"
+            file_name = f"{VideoToFrame._FRAME_PATH}/frame_{_photo_count:02d}.png"
             cv2.imwrite(file_name, frame)
             print(f"Saved: {file_name}")
 
