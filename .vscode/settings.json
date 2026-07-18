@@ -1,11 +1,15 @@
 {
     "cSpell.words": [
         "bestvideo",
-        "imwrite",
-        "outtmpl",
-        "setuptools",
-        "Rudra",
-        "Prasad",
         "Bhuyan",
+        "cookiefile",
+        "cookiesfrombrowser",
+        "imwrite",
+        "loguru",
+        "outtmpl",
+        "pathlib",
+        "Prasad",
+        "Rudra",
+        "setuptools"
     ],
 }
